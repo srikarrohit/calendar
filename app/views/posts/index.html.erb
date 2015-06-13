@@ -27,5 +27,10 @@
 </table>
 
 <br>
-
+<%= calendar_for(@posts) do |t| %>
+	<%= t.head('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun') %>
+  <%= t.day(:day_method => :date) do |date, posts| %>
+    <%= date.day %>
+  <% end %>
+<% end %>
 <%= link_to 'New Post', new_post_path %>
